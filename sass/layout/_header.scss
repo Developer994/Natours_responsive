@@ -1,0 +1,33 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-box {
+        left: 50%;
+        position: absolute;
+        /* The text-align will make sure all the text on the text-box div will be centered.*/
+        text-align: center;
+        top: 40%;
+        /* First -50% means the div will be shifted half of the width to the left side, and the second -50% will shift half of the height to the top.   */
+        transform: translate(-50%, -50%);
+    }
+}

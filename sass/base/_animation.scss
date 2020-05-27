@@ -1,0 +1,53 @@
+@keyframes moveInLeft{
+    /* The animation for the main heading starts at 0%, where it will start of more towards the left than it's default position */
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);  
+    }
+    /* At 60%, the transform function will rotate the text 120deg and bring it back to where it was.  */
+    /* 60%{
+        transform: rotate(120deg);
+    } */
+    /* The animation then moves 10px more to the right than it's default position @ 80% of it's animation*/
+    80%{
+        transform: translateX(10px);
+    }
+    /* @ a 100%, it will be back in it's default position. */
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+
+@keyframes moveInRight{
+    /* The animation for the main heading starts at 0%, where it will start of more towards the left than it's default position */
+    0%{
+        opacity: 0;
+        transform: translateX(100px)
+    }
+    /* The animation then moves 10px more to the right than it's default position @ 80% of it's animation*/
+    80%{
+        transform: translateX(-10px);
+    }
+    /* @ a 100%, it will be back in it's default position. */
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* This will create an animation for when the website is loaded. The button will appear from the bottom and come up with a transitioning affect */
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* The Keyframes will make the main heading move in from the left to the right */

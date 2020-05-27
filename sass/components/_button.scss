@@ -1,0 +1,105 @@
+.btn{
+    /* The link next to btn is called a pseudo element. */
+    &,
+    &:link,
+    &:visited {
+        border-radius: 10rem;
+        /* The inline-block gives the discover button it's own spacing so it doesn't cover up the header elements. */
+        display: inline-block;
+        padding: 1.5rem 4.0rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .2s;
+        position: relative;
+        font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &:hover
+     {
+        /* The 0 means the offset in the x direction, which is zero since we want no shadow in the x direction */
+        /* The 10px means the shadow will be 10px down.*/
+        /* The 20px is the depth of the blurr, making the box look like it's further away. */
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        transform:translateY(-3px);
+        &::after {
+            /* The opacity will make the scaling of the element disappear, so it will look like an animation and the button goes back to it's original size. */
+            opacity: 0;
+            /* Scale increases the element size */
+            transform: scaleX(1.4) scaleY(1.6);
+        }
+    }
+    
+    /* When we click an element, that is called the active state. */
+    &:active, &:focus{
+        outline: none;
+        /* Since we want the button to look a bit further from us and closer to the page, we decrease 10px to 5px and the blurr to 10px. */
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+        transform: translateY(-1px);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+        &::after{
+            background-color: $color-white;
+        }
+    }
+    
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+
+    /* We are using the after for the hovering animation*/
+    &::after{
+        border-radius: 10rem;
+        content: "";
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: all .4s;
+        width: 100%;
+        z-index: -1;
+    }
+    
+    &--animated{
+        /* The .75s will cause a delay for the animation to start compared to rest of the elements on the page. */
+        animation: moveInBottom 0.5s ease-out .75s;
+        /* The 0% in the keyframes for the moveInBottom will be applied before the animation starts because of the animation-fill-mode: backwards;*/
+        animation-fill-mode: backwards;
+    }
+    }
+
+.btn-text {
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
