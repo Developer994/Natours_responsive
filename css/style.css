@@ -1,3 +1,18 @@
+/*
+0-600px  : Phone
+600-900  : Tablet portrait
+900-1200 : Tablet landscape
+[1200-1800] is where our normal style apply
+1800 +   : Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desk
+*/
+/* 1em = 16px */
+/* 600px/16px = 37.5 */
 *,
 *::after,
 *::before {
@@ -7,6 +22,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -525,6 +549,7 @@ body {
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid #eee;
+    hyphens: auto;
     -webkit-hyphens: auto; }
   .popup:target {
     opacity: 1;
