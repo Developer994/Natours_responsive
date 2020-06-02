@@ -1,5 +1,5 @@
 @mixin clearfix {
-    &::after{
+    &::after {
         content: "";
         display: table;
         clear: both;
@@ -8,7 +8,6 @@
 
 @mixin absCenter {
     position: absolute;
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -30,7 +29,9 @@ $breakpoint argument choices:
 - big-desk
 */
 
- /* 1em = 16px */
+// ORDER: Base + typography > general layout + grid > page layout > components 
+
+/* 1em = 16px */
 /* 600px/16px = 37.5 */
 
 @mixin respond($breakpoint) {
